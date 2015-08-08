@@ -12,7 +12,7 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
                                 password: "foo",
                                 password_confirmation: "bar" }
     end
-    assert_template 'user/new'
+    assert_template 'users/new'
   end
 
   test "valid signup information" do
