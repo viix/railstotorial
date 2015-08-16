@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'password_resets/new'
+
+  get 'password_resets/edit'
+
   get 'sessions/new'
 
   #get 'static_pages/home'
@@ -17,8 +21,10 @@ Rails.application.routes.draw do
 
   delete 'logout' => 'sessions#destroy'
 
-  resources :microposts
+  #resources :microposts
   resources :users
+  resources :account_activations, only: [:edit]
+  resources :password_resets, only: [:new, :create, :edit, :update]
   get 'welcome/index'
 
   # The priority is based upon order of creation: first created -> highest priority.
